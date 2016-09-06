@@ -1,0 +1,35 @@
+<add-policy-dialog></add-policy-dialog>
+    <div class="container" style="width:900px;" >
+      <a href="home">
+      <button href="home" class="btn btn-primary ">Home</button>
+      </a>
+      
+
+      <h3>Policy Groups </h3>
+      <button #createButton (click) = "togglePfComponent($event)" class="btn btn-primary btn-sm" style="float: right;" >Create Policy &nbsp; &nbsp;
+        <span class="glyphicon glyphicon-chevron-down"></span>
+      </button>
+
+      <policy-form (onUpdated)="onUpdated($event)" (onAddPolicy)= "showCreatePolicyDialog()"></policy-form>
+
+      <div id="policy_table" style="background-color: white; clear:both;" class="well well-lg">
+      <table class="table table-condensed table-hover">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Collector</th>
+          <th>Policy</th>
+          <th>Edit</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let group of groups">
+            <td>{{group.name}}</td>
+            <td>{{group.collector}}</td>
+            <td>{{group.policy}}</td>
+            <td><span (click)="onEdit(group.name, group.collector, group.policy)" class="glyphicon glyphicon-pencil"></span></td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+</div>

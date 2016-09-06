@@ -1,0 +1,11 @@
+import {Component} from '@angular/core';
+import { RouterLink }   from '@angular/router';
+
+
+@Component({
+    selector:'main-tab',
+    templateUrl :'./template/main-tab-template.html'
+})
+export class MainTabComponent{
+}
+

@@ -1,0 +1,48 @@
+<add-router-dialog></add-router-dialog>
+    
+    <div class="container" style="width:900px;" >
+      <a href="home">
+        <button class="btn btn-primary ">Home</button>
+      </a>
+      <h3>Apply Subscriptions</h3>
+     
+      <button #createButton (click) = "togglePfComponent($event)" class="btn btn-primary btn-sm" style="float: right;" >Create Subscription &nbsp; &nbsp;
+        <span class="glyphicon glyphicon-chevron-down"></span>
+      </button>
+    
+      <sub-app-form  (onAddRouter)= "showCreateRouterDialog()">  </sub-app-form>
+
+      <div id="subscription_table" style="background-color: white;clear:both; margin-top:10px;" class="well well-lg">
+      <table class="table table-condensed table-hover">
+        <thead>
+        <tr>
+          <th>Routers</th>
+          <th>Subscirption</th>
+          <th>On/Off</th>
+          <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sa of subapps">
+            <td>{{sa.routerString}}</td>
+            <td>{{sa.subscription}}</td>
+            <td *ngIf="sa.on == true ">  
+              <label class="switch">
+                <input type="checkbox" checked />
+                <div class="slider"></div>
+              </label>
+            </td>
+            <td *ngIf="sa.on == false">  
+              <label class="switch">
+                <input type="checkbox"/>
+                <div class="slider"></div>
+              </label>
+            </td>
+
+            <td><span class="glyphicon glyphicon-trash"></span> </td>
+          </tr>
+      
+      </tbody>
+    </table>
+    </div>
+</div>

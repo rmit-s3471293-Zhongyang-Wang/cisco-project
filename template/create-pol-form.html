@@ -1,0 +1,52 @@
+<div class="create-form form-container well well-lg" [style.display]="isDisplay?'block':'none'">
+
+    <!--create policy group form, shows up on click create policy button-->
+    <!--attention: bootstrap does not working with 2-way data binding -->
+    <form class="form-inline " role="form">
+       <div class="form-group">
+            <label class="control-label">Name</label>
+                <br />
+                <br />
+                <div class="input-group">
+                    <span class="input-group-addon" id="groupNameAddon">
+                        <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                    </span>
+
+                    <!--bind with data model-->
+                    <input required #newGroupName type="text" class="form-control" placeholder="Name"  aria-describedby="groupNameAddon" value="{{policygroup.name}}"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Collector</label>
+                <button type="button" class="btn btn-primary btn-xs" ><i class="glyphicon glyphicon-plus"></i></button>
+                <br>
+                <br />
+                <select #newGroupCol class="form-control" style="width:120px;" >
+                    <option *ngFor="let col of collectors">{{col}}</option>
+                </select>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Policy</label>
+            <button  (click)="addNewPolicy()" type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-plus"></i></button>
+            <br>    
+            <br/>
+            <select #newGroupPol class = "form-control" style="width:120px;" >
+                 <option *ngFor="let pol of policies">{{pol}}</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+        <br>
+        <br />
+            <input type="submit" class="form-control btn btn-primary"  name="submit" value="Submit"  (click)="onSubmit(newGroupName.value,newGroupCol.value, newGroupPol.value)"/>
+        </div>
+        
+        <div class="form-group">
+        <br>
+        <br />
+            <input type="button" class="form-control btn btn-danger" name="delete" value="Delete" />
+        </div>
+    </form>
+</div>    

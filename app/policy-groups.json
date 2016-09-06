@@ -1,0 +1,7 @@
+{
+  "data": [
+    { "name": "POL1", "collector": "col1", "policy":"pol1" },
+    { "name": "POL2", "collector": "col2", "policy":"pol2" },
+    { "name": "POL-Test", "collector": "col3", "policy":"pol3" }
+    ]
+}

@@ -1,0 +1,351 @@
+<div class="" id="add_group_dialog"  [style.display] = "isGroupDialogDisplay?'block':'none'" >
+    <button class="btn  btn-danger btn-xs"  (click) = "closeGroupDialog()"  style="float:right"  >
+    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+    <h4>New Group</h4>
+    <hr />
+    <form class="form-inline " role="form">
+        <div class="form-group">
+            <label class="control-label">Group name</label>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon" id="groupNameAddon"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                </span>
+                <input type="text" class="form-control" placeholder="Group Name"  aria-describedby="groupNameAddon"/>
+            </div>
+        </div>
+        <br />
+        <br />
+
+        <div class="form-group">
+            <label class="control-label">Address</label>
+            <br />
+            <input type="text" class="form-control" placeholder="Address" />
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Port</label>
+            <br />
+            <input type="text" style="width:80px;" class="form-control" placeholder="Port" />
+        </div>
+
+
+        <div class="form-group">
+           <label class="control-label">Encoding</label>
+            <br />
+
+            <select class = "form-control" style="width:100px;"  placeholder="Encoding" >
+                <option>UTF-8</option>
+                <option>Unicode</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Protocol</label>
+            <br />
+            <select class = "form-control" style="width:100px;"  placeholder="Encoding" >
+                <option>TCP</option>
+                <option>UDP</option>
+            </select>
+        </div>
+
+
+       <div class="form-group">
+            <br />
+            <input type="button" class="form-control btn btn-primary" name="submit" value="Submit" />
+        </div>
+
+</form>
+</div>
+
+
+<div id="add_sensor_dialog"  [style.display] = "isSensorDialogDisplay?'block':'none'" >
+    <button class="btn  btn-danger btn-xs"   style="float:right" (click)= "closeSensorDialog()" >
+    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+    <h4>New Sensor</h4>
+    <hr />
+    <form class="form-inline " role="form" >
+        <div class="form-group">
+            <label class="control-label">Sensor Name</label>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon" id="groupNameAddon"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                </span>
+                <input type="text" class="form-control" placeholder="Sensor Name"  aria-describedby="groupNameAddon"/>
+            </div>
+        </div>
+        <br />
+        <br />
+        
+        <div class="form-group">
+            <label class="control-label">Sensor Path</label>
+            <br />
+            <input type="text" class="form-control" placeholder="Sensor Path" style="width:400px;"/>
+        </div>
+       <div class="form-group">
+            <br />
+            <input type="button" class="form-control btn btn-primary" name="submit" value="Submit" />
+        </div>
+
+</form>
+</div>
+
+
+
+
+
+
+<!-- form1 -->
+<div class="form-container well well-lg">
+  <form class="form-inline " role="form">
+    <div class="form-group">
+      <label class="control-label">Policy name</label>
+      <br>
+      <br />
+      <div class="input-group">
+        <span class="input-group-addon" id="groupNameAddon">
+          <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+        </span>
+        <input type="text" class="form-control" placeholder="Policy Name"  aria-describedby="groupNameAddon"/>
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <label class="control-label">Group</label>
+      <button class="btn btn-primary btn-xs" type="button" (click)="showAddGroupDialog()"><i class="glyphicon glyphicon-plus"></i></button>
+      <br>
+      <br />
+      <select class = "form-control" style="width:120px;" >
+        <option>Group1</option>
+        <option>Group2</option>
+        <option>Group3</option>
+        <option>Group4</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label">Sensor</label>
+      <button  type="button" (click)="showAddSensorDialog()" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-plus"></i></button>
+      <br>    
+      <br/>
+
+      <div class="btn-group">
+       <button type="button" class="btn btn-default dropdown-toggle" 
+       data-toggle="dropdown">
+       Select Sensors &nbsp;&nbsp;<span class="caret"></span>
+     </button>
+     <ul class="dropdown-menu" role="menu">
+      <li> 
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="">Sensor 1
+          </label>
+        </div>
+      </li>
+      <li><a href="#">另一个功能</a></li>
+      <li><a href="#">其他</a></li>
+      <li class="divider"></li>
+      <li><a href="#">分离的链接</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label">Interval</label>
+  <br>     
+  <br />
+  <input type="number" class="form-control">
+</div>
+
+<!-- toggle switch -->
+<div class="form-group">
+  <br />
+  <br />
+  <label class="switch">
+    <input type="checkbox" checked>
+    <div class="slider"></div>
+  </label>
+</div>
+
+
+<div class="form-group">
+  <br>
+  <br />
+  <input type="button" class="form-control btn btn-primary" name="submit" value="Submit" />
+</div>
+</form>
+</div>
+
+
+
+
+
+
+
+<!-- form 2-->
+<div class="form-container well well-lg">
+  <form class="form-inline " role="form">
+    <div class="form-group">
+      <label class="control-label">Policy name</label>
+      <br>
+      <br />
+      <div class="input-group">
+        <span class="input-group-addon" id="groupNameAddon">
+          <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+        </span>
+        <input type="text" class="form-control" placeholder="Policy Name"  aria-describedby="groupNameAddon"/>
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <label class="control-label">Group</label>
+      <button class="btn btn-primary btn-xs" (click)="showAddGroupDialog()"><i class="glyphicon glyphicon-plus"></i></button>
+      <br>
+      <br />
+      <select class = "form-control" style="width:120px;" >
+        <option>Group1</option>
+        <option>Group2</option>
+        <option>Group3</option>
+        <option>Group4</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label">Sensor</label>
+      <button class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-plus"></i></button>
+      <br>    
+      <br/>
+
+      <div class="btn-group">
+       <button type="button" class="btn btn-default dropdown-toggle" 
+       data-toggle="dropdown">
+       Select Sensors &nbsp;&nbsp;<span class="caret"></span>
+     </button>
+     <ul class="dropdown-menu" role="menu">
+      <li> 
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="">Sensor 1
+          </label>
+        </div>
+      </li>
+      <li><a href="#">另一个功能</a></li>
+      <li><a href="#">其他</a></li>
+      <li class="divider"></li>
+      <li><a href="#">分离的链接</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label">Interval</label>
+  <br>     
+  <br />
+  <input type="number" class="form-control">
+</div>
+
+<!-- toggle switch -->
+<div class="form-group">
+  <br />
+  <br />
+  <label class="switch">
+    <input type="checkbox" checked>
+    <div class="slider"></div>
+  </label>
+</div>
+
+
+<div class="form-group">
+  <br>
+  <br />
+  <input type="button" class="form-control btn btn-primary" name="submit" value="Submit" />
+</div>
+</form>
+</div>
+
+
+
+<!-- form3 -->
+
+
+<div class="form-container well well-lg">
+  <form class="form-inline " role="form">
+    <div class="form-group">
+      <label class="control-label">Policy name</label>
+      <br>
+      <br />
+      <div class="input-group">
+        <span class="input-group-addon" id="groupNameAddon">
+          <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+        </span>
+        <input type="text" class="form-control" placeholder="Policy Name"  aria-describedby="groupNameAddon"/>
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <label class="control-label">Group</label>
+      <button class="btn btn-primary btn-xs" (click)="showAddGroupDialog()"><i class="glyphicon glyphicon-plus"></i></button>
+      <br>
+      <br />
+      <select class = "form-control" style="width:120px;" >
+        <option>Group1</option>
+        <option>Group2</option>
+        <option>Group3</option>
+        <option>Group4</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label">Sensor</label>
+      <button class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-plus"></i></button>
+      <br>    
+      <br/>
+
+      <div class="btn-group">
+       <button type="button" class="btn btn-default dropdown-toggle" 
+       data-toggle="dropdown">
+       Select Sensors &nbsp;&nbsp;<span class="caret"></span>
+     </button>
+     <ul class="dropdown-menu" role="menu">
+      <li> 
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="">Sensor 1
+          </label>
+        </div>
+      </li>
+      <li><a href="#">另一个功能</a></li>
+      <li><a href="#">其他</a></li>
+      <li class="divider"></li>
+      <li><a href="#">分离的链接</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label">Interval</label>
+  <br>     
+  <br />
+  <input type="number" class="form-control">
+</div>
+
+<!-- toggle switch -->
+<div class="form-group">
+  <br />
+  <br />
+  <label class="switch">
+    <input type="checkbox" checked>
+    <div class="slider"></div>
+  </label>
+</div>
+
+
+<div class="form-group">
+  <br>
+  <br />
+  <input type="button" class="form-control btn btn-primary" name="submit" value="Submit" />
+</div>
+</form>
+</div>

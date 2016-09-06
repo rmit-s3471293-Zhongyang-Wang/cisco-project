@@ -1,0 +1,41 @@
+<div class="" id="add_sensor_dialog" >
+    <!--close button -->
+    <button (click) = "closeDialog()" class="btn  btn-danger btn-xs"  style="float:right"  >
+    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+    <h4>New Sensor</h4>
+    <hr />
+
+    <!--form -->
+    <form class="form-inline " role="form">
+
+        <!--policy name-->
+        <div class="form-group">
+            <label class="control-label">Sensor Name</label>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon" id="groupNameAddon"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                </span>
+                <!--bind it to angular component -->
+                <input required #newSensorName type="text" class="form-control" placeholder="Policy Name"  aria-describedby="groupNameAddon"/>
+            </div>
+        </div>
+        <br />
+        <br />
+         <label class="control-label">Sensor Path</label> 
+            <fieldset style="border:1px solid grey; border-radius:3px;">
+                 <div class="checkbox">
+                    <label><input type="checkbox" value="">Path 1</label>
+                </div>
+                <br />
+                <div class="checkbox">
+                    <label><input type="checkbox" value="">Path 2</label>
+                </div>
+            </fieldset>     
+
+       <div class="form-group">
+            <br />
+            <input type="button" class="form-control btn btn-primary" name="submit" value="Submit" />
+        </div>
+
+</form>
+</div>
